@@ -1,9 +1,10 @@
 /**
  * Created by cuyu on 3/31/17.
  */
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import CellWrapper from '../containers/CellWrapper'
-import './Matrix.css'
+// import './Matrix.css'
 import {DIFFICULTY} from '../constants/game-difficulty'
 
 

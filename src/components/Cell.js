@@ -1,8 +1,9 @@
 /**
  * Created by cuyu on 3/31/17.
  */
-import React, {Component, PropTypes} from 'react'
-import './Cell.css'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+// import './Cell.css'
 import {COLOR_MAP} from '../constants/color-mapping'
 
 

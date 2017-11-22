@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import {createStore, applyMiddleware, compose} from 'redux'
 import rootReducer from './reducers'
@@ -28,9 +27,10 @@ const store = createStore(
 // };
 
 
-ReactDOM.render(
-    <Provider store={store}>
-        <App/>
-    </Provider>,
-    document.getElementById('root')
-);
+export default () => {
+    return (
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    );
+};

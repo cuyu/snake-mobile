@@ -2,7 +2,8 @@
  * Created by cuyu on 4/6/17.
  */
 
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types'
 
 
 function filterObject(target, whiteList) {

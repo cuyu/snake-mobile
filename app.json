@@ -1,6 +1,5 @@
 {
   "expo": {
     "sdkVersion": "22.0.0"
-  },
-  "entryPoint": "entry.js"
+  }
 }
