@@ -3,6 +3,7 @@
  */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import { StyleSheet, View } from 'react-native';
 // import './Cell.css'
 import {COLOR_MAP} from '../constants/color-mapping'
 
@@ -15,8 +16,8 @@ class Cell extends Component {
     render() {
         let color = COLOR_MAP[this.props.value.toString()];
         return (
-            <div className="Cell" style={{'backgroundColor': color}}>
-            </div>
+            <View className="Cell" style={{'backgroundColor': color}}>
+            </View>
         );
     }
 }

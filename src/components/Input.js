@@ -3,6 +3,7 @@
  */
 
 import React, {Component} from 'react';
+import {TextInput} from 'react-native'
 import PropTypes from 'prop-types'
 
 
@@ -28,7 +29,7 @@ class Input extends Component {
     render() {
         let filteredProps = filterObject(this.props, VALID_PROPS);
         return (
-            <input {...filteredProps} value={this.props.value} onChange={this.props.handleValueChange}/>
+            <TextInput {...filteredProps} value={this.props.value} onChangeText={this.props.handleValueChange}/>
         );
     }
 }

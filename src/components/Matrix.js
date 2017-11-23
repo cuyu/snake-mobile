@@ -3,6 +3,7 @@
  */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import {StyleSheet, View, Button} from 'react-native';
 import CellWrapper from '../containers/CellWrapper'
 // import './Matrix.css'
 import {DIFFICULTY} from '../constants/game-difficulty'
@@ -42,18 +43,18 @@ class Matrix extends Component {
                 rowContent.push(<CellWrapper key={id.toString()} id={id} value={0}/>);
             }
             content.push(
-                <div key={i.toString()} className="Row">
+                <View key={i.toString()} className="Row">
                     {rowContent}
-                </div>
+                </View>
             );
         }
 
         return (
-            <div className="Matrix" onKeyUp={this.props.handleKeyPress} tabIndex="0">
+            <View className="Matrix" onKeyUp={this.props.handleKeyPress} tabIndex="0">
                 {content}
-                <button onClick={this.loopSnakeMove}>Start</button>
-                <button onClick={this.props.handleReset}>Reset</button>
-            </div>
+                <Button onPress={this.loopSnakeMove} title="Start"/>
+                <Button onPress={this.props.handleReset} title="Reset"/>
+            </View>
         )
     }
 }
