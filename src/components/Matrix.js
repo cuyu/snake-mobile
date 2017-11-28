@@ -9,6 +9,18 @@ import CellWrapper from '../containers/CellWrapper'
 import {DIFFICULTY} from '../constants/game-difficulty'
 
 
+const styles = StyleSheet.create({
+    container: {
+        width: '100%',
+        height: '100%',
+    },
+    row: {
+        // flex: 1,
+        flexDirection: 'row',
+    }
+});
+
+
 class Matrix extends Component {
     static propTypes = {
         handleReset: PropTypes.func.isRequired,
@@ -43,14 +55,14 @@ class Matrix extends Component {
                 rowContent.push(<CellWrapper key={id.toString()} id={id} value={0}/>);
             }
             content.push(
-                <View key={i.toString()} className="Row">
+                <View key={i.toString()} className="Row" style={styles.row}>
                     {rowContent}
                 </View>
             );
         }
 
         return (
-            <View className="Matrix" onKeyUp={this.props.handleKeyPress} tabIndex="0">
+            <View className="Matrix" onKeyUp={this.props.handleKeyPress} tabIndex="0" style={styles.container}>
                 {content}
                 <Button onPress={this.loopSnakeMove} title="Start"/>
                 <Button onPress={this.props.handleReset} title="Reset"/>

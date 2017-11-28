@@ -8,6 +8,17 @@ import { StyleSheet, View } from 'react-native';
 import {COLOR_MAP} from '../constants/color-mapping'
 
 
+const styles = StyleSheet.create({
+    cell: {
+        width: 10,
+        height: 10,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: 'gray',
+    },
+});
+
+
 class Cell extends Component {
     static propTypes = {
         value: PropTypes.number.isRequired,
@@ -16,7 +27,7 @@ class Cell extends Component {
     render() {
         let color = COLOR_MAP[this.props.value.toString()];
         return (
-            <View className="Cell" style={{'backgroundColor': color}}>
+            <View className="Cell" style={styles.cell}>
             </View>
         );
     }

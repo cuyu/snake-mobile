@@ -24,8 +24,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        handleValueChange: (event) => {
-            dispatch(cacheInput(ownProps.id, event.target.value));
+        handleValueChange: (text) => {
+            dispatch(cacheInput(ownProps.id, text));
         },
     }
 };
