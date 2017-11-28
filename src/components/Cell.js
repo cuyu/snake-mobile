@@ -3,20 +3,8 @@
  */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View } from 'react-native';
-// import './Cell.css'
+import {StyleSheet, View} from 'react-native';
 import {COLOR_MAP} from '../constants/color-mapping'
-
-
-const styles = StyleSheet.create({
-    cell: {
-        width: 10,
-        height: 10,
-        borderStyle: 'solid',
-        borderWidth: 1,
-        borderColor: 'gray',
-    },
-});
 
 
 class Cell extends Component {
@@ -25,7 +13,17 @@ class Cell extends Component {
     };
 
     render() {
-        let color = COLOR_MAP[this.props.value.toString()];
+        const color = COLOR_MAP[this.props.value.toString()];
+        const styles = StyleSheet.create({
+            cell: {
+                width: 10,
+                height: 10,
+                borderStyle: 'solid',
+                borderWidth: 1,
+                borderColor: 'gray',
+                backgroundColor: color,
+            }
+        });
         return (
             <View className="Cell" style={styles.cell}>
             </View>

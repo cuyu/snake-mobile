@@ -5,7 +5,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {StyleSheet, View, Button} from 'react-native';
 import CellWrapper from '../containers/CellWrapper'
-// import './Matrix.css'
 import {DIFFICULTY} from '../constants/game-difficulty'
 
 
