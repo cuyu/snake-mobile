@@ -3,6 +3,7 @@
  */
 import Matrix from '../components/Matrix'
 import {connect} from 'react-redux'
+import {swipeDirections} from 'react-native-swipe-gestures';
 import {resetMatrix, moveOn, changeDirection} from '../actions'
 import {snakeState} from '../selectors'
 
@@ -22,22 +23,23 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         handleReset: () => {
             dispatch(resetMatrix());
         },
-        handleKeyPress: (event) => {
-            switch (event.keyCode) {
-                case 37:
+        handleSwipe: (direction, state) => {
+            const {SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
+            switch (direction) {
+                case SWIPE_LEFT:
                     dispatch(changeDirection('left'));
                     break;
-                case 38:
+                case SWIPE_UP:
                     dispatch(changeDirection('up'));
                     break;
-                case 39:
+                case SWIPE_RIGHT:
                     dispatch(changeDirection('right'));
                     break;
-                case 40:
+                case SWIPE_DOWN:
                     dispatch(changeDirection('down'));
                     break;
                 default:
-                    console.log('No effect for this key:', event.keyCode);
+                    console.log('No effect for this gesture:');
             }
         },
         handleSnakeMove: () => {

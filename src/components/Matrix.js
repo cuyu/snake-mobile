@@ -4,6 +4,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {StyleSheet, View, Button} from 'react-native';
+import GestureRecognizer from 'react-native-swipe-gestures';
 import CellWrapper from '../containers/CellWrapper'
 import {DIFFICULTY} from '../constants/game-difficulty'
 
@@ -12,6 +13,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
+        flex: 2,
     },
     row: {
         // flex: 1,
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
 class Matrix extends Component {
     static propTypes = {
         handleReset: PropTypes.func.isRequired,
-        handleKeyPress: PropTypes.func.isRequired,
+        handleSwipe: PropTypes.func.isRequired,
         handleSnakeMove: PropTypes.func.isRequired,
     };
 
@@ -61,10 +63,12 @@ class Matrix extends Component {
         }
 
         return (
-            <View className="Matrix" onKeyUp={this.props.handleKeyPress} tabIndex="0" style={styles.container}>
-                {content}
-                <Button onPress={this.loopSnakeMove} title="Start"/>
-                <Button onPress={this.props.handleReset} title="Reset"/>
+            <View className="Matrix" tabIndex="0" style={styles.container}>
+                <GestureRecognizer onSwipe={(direction, state) => this.props.handleSwipe(direction, state)}>
+                    {content}
+                    <Button onPress={this.loopSnakeMove} title="Start"/>
+                    <Button onPress={this.props.handleReset} title="Reset"/>
+                </GestureRecognizer>
             </View>
         )
     }

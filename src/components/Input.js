@@ -29,7 +29,7 @@ class Input extends Component {
     render() {
         let filteredProps = filterObject(this.props, VALID_PROPS);
         return (
-            <TextInput {...filteredProps} value={this.props.value} onChangeText={this.props.handleValueChange}/>
+            <TextInput {...filteredProps} value={this.props.value.toString()} onChangeText={this.props.handleValueChange}/>
         );
     }
 }
